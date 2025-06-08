@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LucaDCZ. - Frontend Developer</title>
+    <!-- Google Fonts - Inter -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+    <div class="min-h-screen-wrapper">
+        <!-- Navigation Bar -->
+        <header class="header container-padding md-container-padding lg-container-padding">
+            <a href="#" class="header-logo">Yash Pawar.</a>
+            <nav class="header-nav">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <div class="header-buttons">
+                <button class="icon-button">
+                    <!-- Placeholder for the small circular icon/button on the right -->
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-button">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section container-padding md-container-padding lg-container-padding">
+            <div class="hero-content">
+                <p class="hero-greetings">Hey, I'm Yash 👋</p>
+
+                <h1 class="hero-title">
+                    <span class="purple-text">Front</span><span class="black-text">end</span>
+                    <br />
+                    <span class="developer-text">Developer</span>
+                </h1>
+
+                <p class="hero-description">
+                    I'm a frontend developer based in Italy, I'll help you build beautiful websites your users will
+                    love.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="button-primary">Get In Touch</a>
+                    <a href="#projects" class="button-secondary">Browse Projects</a>
+                </div>
+            </div>
+
+
+            <div class="hero-image-container purple-border-gradient">
+                <!-- Placeholder image for the circular profile picture -->
+                <div class="actual-img">
+                    <img src="DEADPOOL.png" alt="Profile">
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section container-padding md-container-padding lg-container-padding">
+            <div class="max-w-6xl mx-auto w-full">
+                <h2 class="section-heading">Projects.</h2>
+                <div class="projects-grid">
+                    <!-- Project Card 1: TaskFlow -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="https://placehold.co/800x500/e0e0e0/555555?text=TaskFlow+Dashboard"
+                                alt="TaskFlow Dashboard">
+                        </div>
+                        <h3 class="project-title">
+                            TaskFlow
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
+                        </h3>
+                        <p class="project-description">
+                            Task management system with drag-and-drop, real-time collaboration, and responsive layout.
+                        </p>
+                    </div>
+
+                    <!-- Project Card 2: EcoCart -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="https://placehold.co/800x500/e0e0e0/555555?text=EcoCart+E-commerce"
+                                alt="EcoCart E-commerce">
+                        </div>
+                        <h3 class="project-title">
+                            EcoCart
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
+                        </h3>
+                        <p class="project-description">
+                            E-commerce platform promoting eco-friendly products with payment integration.
+                        </p>
+                    </div>
+
+                    <!-- Project Card 3: EventPlanner -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="https://placehold.co/800x500/e0e0e0/555555?text=EventPlanner+App"
+                                alt="EventPlanner App">
+                        </div>
+                        <h3 class="project-title">
+                            EventPlanner
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
+                        </h3>
+                        <p class="project-description">
+                            Event planning web application, enabling users to organise and manage events effortlessly.
+                        </p>
+                    </div>
+
+                    <!-- Project Card 4: FoodieFinder -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="https://placehold.co/800x500/e0e0e0/555555?text=FoodieFinder+Map"
+                                alt="FoodieFinder Map">
+                        </div>
+                        <h3 class="project-title">
+                            FoodieFinder
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
+                        </h3>
+                        <p class="project-description">
+                            Modern-looking restaurant discovery platform featuring real-time search, reviews, and
+                            ratings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="about" class="experience-section container-padding md-container-padding lg-container-padding">
+            <div class="max-w-6xl mx-auto w-full">
+                <h2 class="section-heading">Experience.</h2>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section container-padding md-container-padding lg-container-padding">
+            <div class="max-w-6xl mx-auto w-full">
+                <h2 class="section-heading">Skills.</h2>
+                <div class="skills-grid">
+                    <!-- Web Design -->
+                    <div>
+                        <h3>Web Design</h3>
+                        <ul>
+                            <li>UI/UX Design</li>
+                            <li>Responsive Design</li>
+                            <li>Wireframing</li>
+                            <li>User Research</li>
+                        </ul>
+                    </div>
+                    <!-- Frontend -->
+                    <div>
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>Javascript</li>
+                            <li>ReactJS</li>
+                            <li>NextJS</li>
+                            <li>CSS3</li>
+                        </ul>
+                    </div>
+                    <!-- Backend -->
+                    <div>
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>NodeJs</li>
+                            <li>MongoDB</li>
+                            <li>ExpressJS</li>
+                            <li>Vercel</li>
+                        </ul>
+                    </div>
+                    <!-- Soft Skills -->
+                    <div>
+                        <h3>Soft Skills</h3>
+                        <ul>
+                            <li>Effective communication</li>
+                            <li>Collaboration</li>
+                            <li>Commitment</li>
+                            <li>Leadership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Story Section -->
+        <section id="my-story" class="my-story-section container-padding md-container-padding lg-container-padding">
+            <div class="max-w-6xl mx-auto w-full">
+                <h2 class="section-heading">My Story.</h2>
+                <div class="my-story-content">
+                    <p>
+                        My journey as a front-end developer started back in 2010, working as a freelancer for clients
+                        all over the world for several years.
+                    </p>
+                    <p>
+                        After being on my own for a while, I decided to enter the corporate world, and I started working
+                        as a software developer at <span class="purple-highlight">Webflow</span>, the same platform I
+                        was using with my freelance clients.
+                    </p>
+                    <p>
+                        After some exciting months of work at Webflow, I decided to transition to <span
+                            class="purple-highlight">Stripe</span>, where I returned what I love: front-end development.
+                    </p>
+                    <p>
+                        My success quickly compounded I started receiving job offers from the biggest names in the
+                        industry.
+                    </p>
+                    <p>
+                        All these opportunities led me to travel the world. Eventually, however, I decided to settle
+                        down for a more calm and simple routine, and I'm now working at <span
+                            class="purple-highlight">Apple</span>. And you know what? I love what I do! 💜
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <header class="contact">
+            <nav class="con-left">
+                <a href="#" class="active">Home</a>
+                <a href="#">Projects</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="con-right">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+            </div>
+        </header>
+
+        <section class="call-to-action">
+            <h2>Interested in working together<span>?</span></h2>
+
+            <div class="cta-row">
+                <div class="buttons">
+                    <button class="primary">Get In Touch</button>
+                    <button class="secondary">Browse Projects</button>
+                </div>
+                <div class="footer">
+                    <p>©2023 All Rights Reserved.<br> Made with <span class="purple">💜</span> by Luca Da Corte</p>
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+    <script src="first.js"></script>
+</body>
+
+</html>
