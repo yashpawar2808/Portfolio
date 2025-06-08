@@ -457,6 +457,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    margin-left: 10px
     background-color: #ffffff;
     flex-shrink: 0;
   }
