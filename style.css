@@ -20,12 +20,6 @@ body {
   /* Prevent horizontal scrolling */
 }
 
-@media (max-width: 768px) {
-    .body{
-      width: 360px;
-    }
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
