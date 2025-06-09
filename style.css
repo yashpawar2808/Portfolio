@@ -248,7 +248,7 @@ body {
 .hero-content {
     /* Set a max-width that respects the container padding for all screen sizes */
     max-width: calc(100% - (1rem * 2)); /* 100% minus 2x default container padding */
-    margin-top: 130px;
+    margin-top: 60px;
     margin-bottom: -10px;
     text-align: left;
 }
