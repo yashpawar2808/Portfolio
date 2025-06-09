@@ -5,20 +5,32 @@
 /* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'); */
 
 
+/* Global Box-Sizing for better responsiveness and overflow prevention */
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 /* Base Styles */
+html, body { /* Ensure html and body take full width and height */
+    width: 100%;
+    min-height: 100%; /* Ensure body can stretch */
+    overflow-x: hidden; /* Prevent horizontal scrolling at the root */
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #fcfcfd;
     color: #333;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh;
+    min-height: 100vh; /* Use min-height for body to ensure it spans the viewport height */
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    /* Prevent horizontal scrolling */
 }
 
 /* Specific body width for small screens (consider removing if not strictly needed) */
@@ -49,9 +61,18 @@ body {
 
 /* Utility Classes (Plain CSS Equivalents) */
 .container-padding {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1rem; /* Default for smallest screens */
+    padding-right: 1rem; /* Default for smallest screens */
 }
+
+/* Tighter padding for very small screens if needed, otherwise 1rem is usually fine */
+@media (max-width: 360px) { /* Example breakpoint for very narrow phones */
+    .container-padding {
+        padding-left: 0.5rem; /* Reduced to 8px */
+        padding-right: 0.5rem; /* Reduced to 8px */
+    }
+}
+
 
 @media (min-width: 768px) {
     .md-container-padding {
@@ -65,6 +86,13 @@ body {
         padding-left: 6rem;
         padding-right: 6rem;
     }
+}
+
+/* min-h-screen-wrapper ensures the wrapper itself adapts */
+.min-h-screen-wrapper {
+    width: 100%; /* Ensure it spans the full width */
+    min-height: 100vh; /* Ensure it covers at least viewport height */
+    overflow: hidden; /* Hide any internal overflow from this level */
 }
 
 /* Header */
@@ -92,6 +120,7 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
     text-decoration: none;
+    white-space: nowrap; /* Prevent logo from wrapping */
 }
 
 .header-logo:hover {
@@ -185,13 +214,14 @@ body {
 .hero-section {
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Default for mobile */
     align-items: flex-start;
     justify-content: center;
     min-height: 100vh;
     text-align: left;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    /* Use container-padding for horizontal padding to keep it consistent */
+    /* padding-left: 1.5rem; */
+    /* padding-right: 1.5rem; */
 }
 
 @media (max-width: 639px) {
@@ -206,26 +236,48 @@ body {
 
 @media (min-width: 768px) {
     .hero-section {
-        flex-direction: row;
+        flex-direction: row; /* For desktop: side-by-side */
         padding-top: 0;
         padding-bottom: 0;
+        justify-content: space-between; /* Distribute space between content and image */
+        align-items: center; /* Vertically center content and image */
+        gap: 2rem; /* Add gap between hero-content and hero-image-container */
     }
 }
 
 .hero-content {
-    max-width: 36rem;
+    /* Set a max-width that respects the container padding for all screen sizes */
+    max-width: calc(100% - (1rem * 2)); /* 100% minus 2x default container padding */
     margin-top: 130px;
     margin-bottom: -10px;
     text-align: left;
 }
 
+/* Adjusted hero-content for small screens to prevent overflow */
+@media (max-width: 639px) {
+    .hero-content {
+        max-width: 100%; /* Ensure it doesn't exceed parent width */
+        padding-right: 0; /* Remove extra padding that might push content */
+        margin-left: 0; /* Ensure no unwanted left margin pushing content right */
+        margin-right: 0; /* Ensure no unwanted right margin pushing content right */
+    }
+}
+/* More specific max-width for very narrow screens if needed, based on container-padding */
+@media (max-width: 360px) {
+    .hero-content {
+        max-width: calc(100% - (0.5rem * 2)); /* 100% minus 2x tighter container padding */
+    }
+}
+
+
 @media (min-width: 768px) {
     .hero-content {
-        max-width: 42rem;
+        max-width: 42rem; /* Revert to a reasonable max-width for desktop */
         text-align: left;
-        margin-right: 22rem;
-        margin-bottom: 0;
-        margin-left: 80px;
+        margin-right: 0; /* Remove fixed margin for flex layout */
+        margin-left: 80px; /* Keep left margin for overall page alignment */
+        margin-top: 0; /* Adjust top margin for desktop alignment */
+        margin-bottom: 0; /* Adjust bottom margin for desktop alignment */
     }
 }
 
@@ -244,12 +296,64 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.5rem; /* Default, will be overridden */
     line-height: 0.8;
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 800;
+    /* Removed word-break and overflow-wrap from general rule to prevent desktop issues */
+    /* word-break: break-word; */
+    /* overflow-wrap: break-word; */
 }
+
+/* Aggressively reduce font size for smaller phones to prevent overflow */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem; /* Reduced to 40px */
+        word-break: break-word; /* Apply only on mobile for extreme cases */
+        overflow-wrap: break-word; /* Apply only on mobile for extreme cases */
+    }
+}
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 2.2rem; /* Reduced to 35.2px for very small screens */
+        letter-spacing: -1px;
+        word-break: break-word; /* Apply only on mobile for extreme cases */
+        overflow-wrap: break-word; /* Apply only on mobile for extreme cases */
+    }
+}
+@media (max-width: 320px) { /* Targeting iPhone 5/SE and similar smallest devices */
+    .hero-title {
+        font-size: 1.7rem; /* Further reduced to ~27.2px, more aggressive */
+        letter-spacing: -0.5px;
+        line-height: 0.9; /* Adjust line height slightly if letters are too close */
+        word-break: break-word; /* Apply only on mobile for extreme cases */
+        overflow-wrap: break-word; /* Apply only on mobile for extreme cases */
+    }
+}
+@media (max-width: 280px) { /* Even smaller screens (e.g., some old Androids) */
+    .hero-title {
+        font-size: 1.5rem; /* Even more reduced */
+        letter-spacing: -0.5px;
+        line-height: 1;
+        word-break: break-word; /* Apply only on mobile for extreme cases */
+        overflow-wrap: break-word; /* Apply only on mobile for extreme cases */
+    }
+}
+
+
+/* Adjust line-height for desktop to ensure proper spacing with <br> */
+@media (min-width: 768px) {
+    .hero-title {
+        line-height: 1.1; /* Increased line-height for better readability on desktop */
+    }
+}
+@media (min-width: 1024px) {
+    .hero-title {
+        line-height: 1; /* Match original, but ensure it's not too tight */
+    }
+}
+
 
 .purple-text {
     color: #6e06f2;
@@ -276,7 +380,7 @@ body {
 @media (min-width: 768px) {
     .hero-title {
         font-size: 4.5rem;
-        line-height: 0.8;
+        /* line-height: 0.8; This was too tight, handled above */
     }
 
     .developer-text {
@@ -288,7 +392,7 @@ body {
     .hero-title {
         font-size: 6rem;
         letter-spacing: -3px;
-        line-height: 1;
+        /* line-height: 1; This was fine */
         margin-top: 15px;
         margin-bottom: -1.9rem;
     }
@@ -426,17 +530,9 @@ body {
     .hero-image-container {
         width: 20rem;
         height: 20rem;
-        margin-top: 100px;
-        margin-right: 90px;
-        margin-left: 0; /* Reset margin-left for larger screens */
-        margin-bottom: 0; /* Reset margin-bottom for larger screens */
-    }
-}
-
-@media (min-width: 340px) {
-    .hero-image-container {
-        width: 20rem;
-        height: 20rem;
+        margin-top: 0; /* Adjust top margin for larger screens to align with flex */
+        margin-right: 0; /* Remove fixed margin for flex layout */
+        margin-left: auto; /* Allow auto margin to push it to the right */
     }
 }
 
@@ -459,6 +555,7 @@ body {
 
 /* Projects Section */
 .projects-section {
+    width: 100%; /* Ensure section takes full width */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -475,7 +572,7 @@ body {
     color: #1a1a1a;
     margin-bottom: 1rem;
     text-align: left;
-    width: 100%;
+    width: 100%; /* Ensure heading takes full width */
     margin-left: 10px;
     padding-left: 1rem; /* Added for alignment */
     padding-right: 1rem; /* Added for alignment */
@@ -596,6 +693,7 @@ body {
 
 /* Experience Section (Contact & Socials) */
 .contact {
+    width: 100%; /* Ensure section takes full width */
     display: flex;
     flex-direction: column; /* Stack elements vertically by default for mobile */
     align-items: center; /* Center items horizontally */
@@ -696,6 +794,7 @@ body {
     display: flex;
     justify-content: center; /* Center the skill containers */
     padding: 1rem; /* Add padding to the skillset container */
+    width: 100%; /* Ensure skillset container takes full width */
 }
 
 .container2 {
@@ -809,6 +908,7 @@ body {
 
 /* Skills Section */
 .skills-section {
+    width: 100%; /* Ensure section takes full width */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -839,6 +939,7 @@ body {
 
 /* My Story Section */
 .my-story-section {
+    width: 100%; /* Ensure section takes full width */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -866,6 +967,7 @@ body {
 
 /* Call to Action Section (Footer) */
 .call-to-action {
+    width: 100%; /* Ensure section takes full width */
     background-color: rgb(20, 24, 32); /* Dark background */
     color: #fcfcfd; /* Light text */
     padding: 3rem 1rem; /* Responsive padding */
