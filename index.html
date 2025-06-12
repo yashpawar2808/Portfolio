@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash - Frontend Developer</title>
+    <title>Yash Pawar</title>
     <!-- Google Fonts - Inter -->
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for social icons, ensure this is linked if you're using it -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="cropped_circle_image.png">
 </head>
 
 <body class="antialiased">
@@ -23,7 +24,7 @@
             </nav>
             <div class="header-buttons">
                 <!-- Chat Button (Desktop Only) -->
-                <div class="chat-button">
+                <div class="chat-button"  onclick="window.location.href='mailto:yash.growr@gmail.com'">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fff"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
                         <path
@@ -46,10 +47,10 @@
                     <!-- Menu Content -->
                     <div class="mobile-menu-content">
                         <div class="logo">Yash <span style="color:#333333;">Pawar.</span></div>
-                        <a href="#" style="color: #6e06f2;">Home</a>
-                        <a href="#" style="color: rgb(120, 120, 120);">Projects</a>
-                        <a href="#" style="color: rgb(120, 120, 120);">About</a>
-                        <a href="#" style="color: rgb(120, 120, 120); font-weight: bold;">Get In Touch</a>
+                        <a href="#home" style="color: #6e06f2;">Home</a>
+                        <a href="#projects" style="color: rgb(120, 120, 120);">Projects</a>
+                        <a href="#About" style="color: rgb(120, 120, 120);">About</a>
+                        <a href="mailto:yash.growr@gmail.com" style="color: rgb(120, 120, 120); font-weight: bold;">Get In Touch</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +74,7 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#contact" class="button-primary">Get In Touch</a>
+                    <a href="mailto:yash.growr@gmail.com" class="button-primary">Get In Touch</a>
                     <a href="#projects" class="button-secondary">Browse Projects</a>
                 </div>
             </div>
@@ -82,7 +83,7 @@
             <div class="hero-image-container purple-border-gradient">
                 <!-- Placeholder image for the circular profile picture -->
                 <div class="actual-img">
-                    <img src="DEADPOOL.png" alt="Profile">
+                    <img src="cropped_circle_image.png" alt="Profile">
                 </div>
             </div>
         </section>
@@ -90,7 +91,7 @@
         <!-- Projects Section -->
         <section id="projects" class="projects-section container-padding md-container-padding lg-container-padding">
             <div class="max-w-6xl mx-auto w-full">
-                <h2 class="section-heading">Projects.</h2>
+                <h2 class="section-heading">Projects<span id="purpel-dot">.</span></h2>
                 <div class="projects-grid">
                     <!-- Project Card 1: TaskFlow -->
                     <div class="project-card">
@@ -98,7 +99,7 @@
                             <img src="asset/img/p1.jpg" alt="TaskFlow Dashboard">
                         </div>
                         <h3 class="project-title">
-                            TaskFlow
+                            E-Learning platform
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -107,9 +108,7 @@
                             </svg>
                         </h3>
                         <p class="project-description">
-                            Task management system with drag-and-drop, real-time collaboration, and responsive layout.
-                        </p>
-                    </div>
+                        Developed a fully responsive E-Learning platform using HTML, CSS, and JavaScript with interactive course pages, video lessons, and a user-friendly UI                    </div>
 
                     <!-- Project Card 2: EcoCart -->
                     <div class="project-card">
@@ -117,7 +116,7 @@
                             <img src="asset/img/p2.jpg" alt="EcoCart E-commerce">
                         </div>
                         <h3 class="project-title">
-                            EcoCart
+                            Sonique player
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -126,8 +125,7 @@
                             </svg>
                         </h3>
                         <p class="project-description">
-                            E-commerce platform promoting eco-friendly products with payment integration.
-                        </p>
+                        A dynamic React-based music player with artist-filtered playlists, interactive controls, and a fully responsive UI for seamless music exploration.                        </p>
                     </div>
 
                     <!-- Project Card 3: EventPlanner -->
@@ -136,7 +134,7 @@
                             <img src="asset/img/p3.jpg" alt="EventPlanner App">
                         </div>
                         <h3 class="project-title">
-                            EventPlanner
+                            Apple web-clone
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -145,8 +143,7 @@
                             </svg>
                         </h3>
                         <p class="project-description">
-                            Event planning web application, enabling users to organise and manage events effortlessly.
-                        </p>
+                        Recreated the Apple India homepage using HTML, CSS, and JavaScript with fully Minimal design, dropdown navigation, and animated hero sections to showcase frontend development skills.                        </p>
                     </div>
 
                     <!-- Project Card 4: FoodieFinder -->
@@ -155,7 +152,7 @@
                             <img src="asset/img/p4.jpg" alt="FoodieFinder Map">
                         </div>
                         <h3 class="project-title">
-                            FoodieFinder
+                            Tic-Tac-Toe
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -164,8 +161,7 @@
                             </svg>
                         </h3>
                         <p class="project-description">
-                            Modern-looking restaurant discovery platform featuring real-time search, reviews, and
-                            ratings.
+                        A classic two-player game built with HTML, CSS, and JavaScript to demonstrate interactive UI logic and DOM manipulation.                            ratings.
                         </p>
                     </div>
                 </div>
@@ -247,11 +243,11 @@
 
             <div class="cta-row">
                 <div class="buttons">
-                    <button class="primary">Get In Touch</button>
+                    <button onclick="window.location.href='mailto:yash.growr@gmail.com'" class="primary">Get In Touch</button>
                     <button class="secondary" onclick="window.location.href='#projects'">Browse Projects</button>
                 </div>
                 <div class="footer">
-                    <p>©2023 All Rights Reserved.<br> Made with <span class="purple">💜</span> by Luca Da Corte</p>
+                    <p>©2023 All Rights Reserved.<br> Made with <span class="purple">💜</span> by Yash Pawar</p>
                 </div>
             </div>
         </section>
